@@ -7,13 +7,9 @@ type Title = {
   children: ReactNode;
 };
 
-const Layout: FC<Title> = ({ children, title = "Todo app" }) => {
+const Layout: FC<Title> = ({ children, title }) => {
   return (
     <div className='flex min-h-screen flex-col items-center justify-center font-mono text-3xl text-red-500'>
-      <Head>
-        {/* propsのタイトルを表示 */}
-        <title>{title}</title>
-      </Head>
       <header></header>
       <main className='flex w-screen flex-1 flex-col items-center justify-center'>
         <div>{children}</div>
