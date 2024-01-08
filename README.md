@@ -1,3 +1,14 @@
+# README
+
+editing
+
+## Package
+
+- React, Next.js
+- SWR
+- emotion
+<https://emotion.sh/docs/introduction>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
