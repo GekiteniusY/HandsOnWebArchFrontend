@@ -2,11 +2,7 @@ import React, { FC, ReactNode } from "react";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
 
-type PageProps = {
-  children: ReactNode;
-};
-
-const Layout: FC<PageProps> = ({ children }) => {
+const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     // flex: フレックスボックスを使用
     // min-h-screen: コンテンツが画面よりも短い場合でも、画面全体を占有
