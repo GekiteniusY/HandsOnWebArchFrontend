@@ -6,8 +6,26 @@ editing
 
 - React, Next.js
 - SWR
+  https://swr.vercel.app/ja/docs/getting-started
+  
 - emotion
-<https://emotion.sh/docs/introduction>
+  https://emotion.sh/docs/introduction
+
+- React Hook Form
+  https://react-hook-form.com/
+
+- hookform/resolvers
+- supabase/auth-helpers-nextjs
+- 
+
+- Heroicons
+- encoding
+- uuid
+- types/uuid
+  
+
+<br>
+<br>
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
