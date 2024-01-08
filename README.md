@@ -1,13 +1,19 @@
 # README
 
-editing
+Hosting by Vercel
+https://hands-on-web-arch.vercel.app/
+
+
 
 ## Package
 
 - React, Next.js
 - SWR
   https://swr.vercel.app/ja/docs/getting-started
-  
+
+- Tailwind CSS
+  https://tailwindcss.com/docs/utility-first
+
 - emotion
   https://emotion.sh/docs/introduction
 
@@ -15,9 +21,13 @@ editing
   https://react-hook-form.com/
 
 - hookform/resolvers
-- supabase/auth-helpers-nextjs
-- 
+  
+- supabase/supabase-js
+  https://supabase.com/docs/reference/javascript/installing
 
+- supabase/auth-helpers-nextjs
+  https://supabase.com/docs/guides/auth/auth-helpers/nextjs
+  
 - Heroicons
 - encoding
 - uuid
