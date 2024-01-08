@@ -22,14 +22,18 @@
         "name": "next"
       }
     ],
+    // "jsx": "react-jsx",
+    // "jsxImportSource": "@emotion/react",
+    // "types": ["@emotion/react/types/css-prop"],
     "paths": {
+      // heroiconsのエイリアスを追加
       "@heroicons/react/": [
         "/node_modules/@heroicons/react/"
       ],
       "@/*": [
         "./src/*"
       ]
-    }
+    },
   },
   "include": [
     "next-env.d.ts",
