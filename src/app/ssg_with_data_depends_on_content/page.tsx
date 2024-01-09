@@ -1,19 +1,28 @@
-import React from "react";
-import { supabase } from "../../../utils/supabase";
-import { Notice, Task } from "../../../types/types";
 import CmpHeader from "../../../components/cmp_head";
-import TodoLists from "../../../components/com_todoList";
-import useSWR from "swr";
 import CmpRenderType from "../../../components/cmp_renderType";
+import TodoLists from "../../../components/com_todoList";
+import { Notice, Task } from "../../../types/types";
+import { supabase } from "../../../utils/supabase";
 
-// use clientをつけると、延々とgetDataが走り続けるので注意
+const Page: React.FC = async ({}) => {
+  const { tasks: tasks, notices: notices } = await getData();
 
-// const fetcher = (url: string) => fetch(url).then((result) => result.json());
+  return (
+    <>
+      <CmpHeader title='Todo' />
+      <CmpRenderType renderType='Static Site Generation' />
+      <br />
+      <TodoLists
+        tasks={tasks}
+        notices={notices}
+      />
+    </>
+  );
+};
+export default Page;
 
 async function getData() {
-  console.log("start getData at ssr/");
-
-  // return Task[]
+  // APIのコール
   const { data: tasks } = await supabase
     .from("todos")
     .select("*")
@@ -63,8 +72,7 @@ async function getData() {
 
     return notice;
   });
-
-  return { tasks: tasksData, notices: noticesData };
+  const taskS: string = "";
 
   // SWRを使用するケース
   // const { data, error } = useSWR("", fetcher);
@@ -74,24 +82,10 @@ async function getData() {
   //   throw new Error("Failed to fetch data: " + error);
   // }
   // return data;
+
+  // Pageに渡すデータはここで作成する
+  return {
+    tasks: tasksData,
+    notices: noticesData,
+  };
 }
-
-const Page: React.FC = async ({}) => {
-  const allListData = await getData();
-  const tasks = allListData.tasks;
-  const notices = allListData.notices;
-
-  return (
-    <>
-      <CmpHeader title='Todo' />
-      <CmpRenderType renderType={"Server Side Rendering"} />
-      <br />
-      <TodoLists
-        tasks={tasks}
-        notices={notices}
-      />
-    </>
-  );
-};
-
-export default Page;
