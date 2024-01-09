@@ -1,54 +1,56 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { NextPage, GetStaticProps } from "next";
 import { supabase } from "../../../utils/supabase";
 import { Notice, Task } from "../../../types/types";
 import CmpHeader from "../../../components/cmp_head";
+import TodoLists from "../../../components/com_todoList";
+import useSWR from "swr";
+import CmpRenderType from "../../../components/cmp_renderType";
 
-// TODO: Next.js 13以降ではGetStaticPropsが使用できないためSWRに置き換えが必要
-// export const getStaticProps: GetStaticProps = async () => {
-//   console.log("ssg/page.tsx", "getStaticProps/ ssg invoked");
+const Page: React.FC = ({}) => {
+  const [tasks, setTasks] = useState<any[]>([]);
+  const [notices, setNotices] = useState<any[]>([]);
 
-//   // todosテーブルから全てのレコードを取得
-//   const { data: tasks } = await supabase
-//     .from("todos")
-//     .select("*")
-//     .order("created_at", { ascending: true });
+  useEffect(() => {
+    // do something
+    console.log("ssg/page.tsx", "useEffect invoked");
 
-//   const { data: notices } = await supabase
-//     .from("notices")
-//     .select("*")
-//     .order("created_at", { ascending: true });
+    const getAllLists = async () => {
+      // todosテーブルから全てのレコードを取得
+      const { data: tasks } = await supabase
+        .from("todos")
+        .select("*")
+        .order("created_at", { ascending: true });
+      if (tasks) {
+        setTasks(tasks);
+      }
 
-//   // propsオブジェクトをリターン
-//   return { props: { tasks, notices } };
-// };
+      const { data: notices } = await supabase
+        .from("notices")
+        .select("*")
+        .order("created_at", { ascending: true });
+      if (notices) {
+        setNotices(notices);
+      }
+    };
 
-// TODO: 命名を後から変える
-interface PageProps {
-  tasks: Task[];
-  notices: Notice[];
-}
+    getAllLists();
 
-const Page: React.FC<PageProps> = ({ tasks, notices }) => {
+    return () => {
+      // do shomething
+    };
+  }, []);
+
   return (
     <>
-      {/* ここにページのコンテンツを追加 */}
       <CmpHeader title='Todo' />
-      <p className='mb-3 text-blue-500'>SSG</p>
-      <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            <p className='text-lg font-extrabold'>{task.title}</p>
-          </li>
-        ))}
-      </ul>
-      <ul>
-        {notices.map((notice) => (
-          <li key={notice.id}>
-            <p className='text-lg font-extrabold'>{notice.content}</p>
-          </li>
-        ))}
-      </ul>
+      <CmpRenderType renderType='Static Site Generation' />
+      <br />
+      <TodoLists
+        tasks={tasks}
+        notices={notices}
+      />
     </>
   );
 };
