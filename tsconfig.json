@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -18,10 +22,26 @@
         "name": "next"
       }
     ],
+    // "jsx": "react-jsx",
+    // "jsxImportSource": "@emotion/react",
+    // "types": ["@emotion/react/types/css-prop"],
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      // heroiconsのエイリアスを追加
+      "@heroicons/react/": [
+        "/node_modules/@heroicons/react/"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
+    },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
 }
