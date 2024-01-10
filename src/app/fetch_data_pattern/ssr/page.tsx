@@ -1,10 +1,10 @@
 import React from "react";
-import { supabase } from "../../../utils/supabase";
-import { Notice, Task } from "../../../types/types";
-import CmpHeader from "../../../components/cmp_head";
-import TodoLists from "../../../components/com_todoList";
+import { supabase } from "../../../../utils/supabase";
+import { Notice, Task } from "../../../../types/types";
+import CmpHeader from "../../../../components/cmp_head";
+import TodoLists from "../../../../components/com_todoList";
 import useSWR from "swr";
-import CmpRenderType from "../../../components/cmp_renderType";
+import CmpRenderType from "../../../../components/cmp_renderType";
 
 // use clientをつけると、延々とgetDataが走り続けるので注意
 

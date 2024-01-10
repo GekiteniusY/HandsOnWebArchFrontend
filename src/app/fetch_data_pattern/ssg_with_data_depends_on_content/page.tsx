@@ -1,8 +1,8 @@
-import CmpHeader from "../../../components/cmp_head";
-import CmpRenderType from "../../../components/cmp_renderType";
-import TodoLists from "../../../components/com_todoList";
-import { Notice, Task } from "../../../types/types";
-import { supabase } from "../../../utils/supabase";
+import CmpHeader from "../../../../components/cmp_head";
+import CmpRenderType from "../../../../components/cmp_renderType";
+import TodoLists from "../../../../components/com_todoList";
+import { Notice, Task } from "../../../../types/types";
+import { supabase } from "../../../../utils/supabase";
 
 const Page: React.FC = async ({}) => {
   const { tasks: tasks, notices: notices } = await getData();
