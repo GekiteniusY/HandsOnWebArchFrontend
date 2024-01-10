@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { NextPage, GetStaticProps } from "next";
-import { supabase } from "../../../utils/supabase";
-import { Notice, Task } from "../../../types/types";
-import CmpHeader from "../../../components/cmp_head";
-import TodoLists from "../../../components/com_todoList";
+import { supabase } from "../../../../utils/supabase";
+import { Notice, Task } from "../../../../types/types";
+import CmpHeader from "../../../../components/cmp_head";
+import TodoLists from "../../../../components/com_todoList";
 import useSWR from "swr";
-import CmpRenderType from "../../../components/cmp_renderType";
+import CmpRenderType from "../../../../components/cmp_renderType";
 
 const Page: React.FC = ({}) => {
   const [tasks, setTasks] = useState<any[]>([]);
