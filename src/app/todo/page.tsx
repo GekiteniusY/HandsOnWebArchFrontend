@@ -1,5 +1,5 @@
 "use client";
-import CmpHeader from "../../../components/cmp_head";
+import CmpHeader from "../../../components/com-header";
 import Layout from "./layout";
 
 export default function Todo() {

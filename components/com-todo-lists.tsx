@@ -1,5 +1,5 @@
 import { Notice, Task } from "../types/types";
-import CmpHeader from "./cmp_head";
+import CmpHeader from "./com-header";
 
 type _AllLists = {
   tasks: Task[];
