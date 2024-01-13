@@ -14,6 +14,8 @@ const SingUpForm = (props: {
   const onSubmit = async (event: any) => {
     event.preventDefault();
     showModal(false);
+
+    // emaiRedirectTo /auth/callbackのルーティングへのリンクの情報を設定
     try {
       const { error: signUpError } = await supabase.auth.signUp({
         email: email,
