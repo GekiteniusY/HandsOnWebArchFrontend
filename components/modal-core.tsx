@@ -8,21 +8,23 @@ interface Props {
   modalType: ModalType;
 }
 
+// TODO: 呼び出し元はコントローラーなどとして、コンポーネントを分離する
+// TODO: モーダル外部をクリックしたときに閉じれるようにする
 const ModalCore = ({ modalType }: Props) => {
   // モーダルの初期値はfalse（閉じている状態）
   const [showModal, setShowModal] = useState(false);
 
-  let title = "";
-  let headerButton = "";
-  let formElement = <p>フォームを読み込めませんでした。</p>;
+  let title: string = "";
+  let headerButton: string = "";
+  let formElement: JSX.Element = <p>フォームを読み込めませんでした。</p>;
 
   switch (modalType) {
-    case ModalType.SingIn:
+    case ModalType.SignIn:
       title = "ログインフォーム";
       headerButton = "Login";
       formElement = <SingInForm showModal={setShowModal}></SingInForm>;
       break;
-    case ModalType.SingOut:
+    case ModalType.SignUp:
       title = "ユーザー登録フォーム";
       headerButton = "Sign Up";
       formElement = <SingUpForm showModal={setShowModal}></SingUpForm>;
@@ -35,6 +37,7 @@ const ModalCore = ({ modalType }: Props) => {
       <button
         type='button'
         className='text-gray-600 hover:text-blue-600'
+        onClick={() => setShowModal(true)}
       >
         {headerButton}
       </button>

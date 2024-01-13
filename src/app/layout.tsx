@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ComSupabaseListener from "../../components/com-supabase-listener";
+import ComSupabaseListener from "../../components/supabase-listener";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ja'>
-      <body className={inter.className}>
+      <body>
         <div>
           <ComSupabaseListener />
         </div>

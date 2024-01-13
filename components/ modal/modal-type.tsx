@@ -1,4 +1,4 @@
 export enum ModalType {
-  SingIn = 1,
-  SingOut = 2,
+  SignIn = 1,
+  SignUp = 2,
 }

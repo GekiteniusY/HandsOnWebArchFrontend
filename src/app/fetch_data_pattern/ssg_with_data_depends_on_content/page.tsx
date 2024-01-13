@@ -1,6 +1,6 @@
-import CmpHeader from "../../../../components/com-header";
-import CmpRenderType from "../../../../components/com-render-type";
-import TodoLists from "../../../../components/com-todo-lists";
+import CmpHeader from "../../../../components/header";
+import CmpRenderType from "../../../../components/render-type";
+import TodoLists from "../../../../components/todo-lists";
 import { Notice, Task } from "../../../../types/types";
 import { supabase } from "../../../../utils/supabase";
 
