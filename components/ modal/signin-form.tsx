@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { Dispatch, SetStateAction } from "react";
 
 // TODO: 入力欄をコンポーネント化する
+// TODO: actionがハードコーディングされているため、ディレクトリ変更でズレる
 const SingInForm = (props: {
   showModal: Dispatch<SetStateAction<boolean>>;
 }) => {
@@ -12,7 +13,7 @@ const SingInForm = (props: {
   return (
     // フォームの入力時の処理はlogin/route.tsxのPOSTで行われる
     <form
-      action='/auth/login'
+      action='api_handler/auth/login'
       method='post'
       className='space-y-4'
     >

@@ -6,6 +6,9 @@ import { NextResponse } from "next/server";
 // supabaseのSignout処理のAPIを呼び出してログアウト処理をする
 // エラーが起きなければトップ（ルート）画面にリダイレクトする
 export async function POST(request: Request) {
+  // debug
+  console.log("invoked logout api/handler/auth/logout POST");
+
   const requestUrl = new URL(request.url);
   const supabase = createRouteHandlerClient({ cookies });
 
